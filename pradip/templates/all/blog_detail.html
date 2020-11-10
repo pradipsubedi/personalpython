@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Header start -->
+<header class="header">
+    <nav class="navbar navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'blog:index' %}">Pradip</a>
+            </div>
+            <div class="collapse navbar-collapse" id="custom-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'blog:index' %}">home</a></li>
+                    <li><a href="{% url 'blog:blog_list' %}">blog</a></li>
+
+                </ul>
+            </div>
+        </div><!-- .container -->
+    </nav>
+</header>
+<!-- Header end -->
+<!-- Blog Detail Start -->
+
+<section class="blog-detail">
+    <div class="container">
+        <div class="blog-detail-banner wow fadeIn">
+
+            <img src="{% static 'images/blog-banner.jpg' %}"
+                alt="The single greatest gift to get your friend who always travels">
+
+        </div>
+        <div class="blog-detail-contents wow fadeInUp">
+            <h2>{{blog.title}}</h2>
+            <div class="blog-detail-about clearfix">
+                <div class="media pull-left">
+                    <div class="media-left">
+                        <img src="{% static 'images/avatar.jpg' %}" class="media-object" alt="avatar">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">PRADIP SUBEDI</h4>
+                        <p>{{blog.created_on}}</p>
+                    </div>
+                </div>
+                <!-- <div class="blog-detail-category pull-right">
+                    Travel
+                </div> -->
+            </div>
+            <div class="blog-detail-content">
+                <figure class="full-width caption">
+                    <img src="{{blog.pic.url}}" alt="Blog Desc" />
+
+                    <figcaption class="caption-text">{{blog.title}}</figcaption>
+
+                </figure>
+                <p> {{blog.content}}</p>
+
+
+            </div>
+            <!-- <div class="blog-detail-footer">
+                <div class="blog-detail-sib">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <a href="../01/the-advantages-and-disadvantages-of-working-from-home.html" class="blog-nav">
+                                <span>Previous</span>
+                                <p>The Advantages & Disadvantages of Working from Home</p>
+                            </a>
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <a href="../../../../design/2019/01/20/a-week-with-the-apple-watch.html" class="blog-nav">
+                                <span>Next</span>
+                                <p>A Week With the Apple Watch</p>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+<section id="blog" class="module blog module-gray">
+    <div class="container">
+
+        <div class="module-header">
+            <h2 class="module-title">Recent Publications
+                <span>Articles</span>
+            </h2>
+            <div class="module-line"></div>
+        </div>
+
+        <div class="row">
+
+
+            {% for blog in blogs|slice:"0:3" %}
+            <div class="col-sm-4">
+                <a href="{% url 'blog:blog_detail' slug=blog.slug  %}" class="blogList wow fadeInUp">
+                    <div class="blogList-img">
+                        <img src="{{blog.pic.url}}" alt="Blog Desc">
+                        <span>-Pradip</span>
+                    </div>
+                    <div class="blogList-desc">
+                        <h3>{{blog.title}}</h3>
+                        <div>{{blog.content|slice:":200" }}</div>
+                    </div>
+                </a>
+            </div>
+            {% endfor%}
+
+
+
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section>
+
+<!-- Blog Detail End -->
+
+{% endblock content  %}

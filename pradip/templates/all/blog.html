@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Header start -->
+<header class="header">
+    <nav class="navbar navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'blog:index' %}">Pradip</a>
+            </div>
+            <div class="collapse navbar-collapse" id="custom-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'blog:index' %}">home</a></li>
+                    <li><a href="{% url 'blog:blog_list' %}">blog</a></li>
+
+                </ul>
+            </div>
+        </div><!-- .container -->
+    </nav>
+</header>
+<!-- Header end -->
+<section id="blog" class="module blog module-gray">
+    <div class="container">
+
+        <div class="module-header">
+            <h2 class="module-title">Publications
+                <span>Articles</span>
+            </h2>
+            <div class="module-line"></div>
+        </div>
+
+        <div class="row">
+
+
+            {% for blog in blogs %}
+            <div class="col-sm-4">
+                <a href="{% url 'blog:blog_detail' slug=blog.slug  %}" class="blogList wow fadeInUp">
+                    <div class="blogList-img">
+                        <img src="{{blog.pic.url}}" alt="Blog Desc">
+                        <span>-Pradip</span>
+                    </div>
+                    <div class="blogList-desc">
+                        <h3>{{blog.title}}</h3>
+                        <div>{{blog.content|slice:":200" }}</div>
+                    </div>
+                </a>
+            </div>
+            {% endfor%}
+
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section>
+
+{%endblock content%}

@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradip Subedi</title>
+    <!-- <link rel="shortcut icon" href="https://www.abc/favicon.ico"> -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Font Awesome CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="{% static 'css/all.css' %}" rel="stylesheet" media="screen">
+
+    <!--[if lte IE 7]> 
+		<script src="/assets/js/icons-lte-ie7.js"></script>
+	<![endif]-->
+
+    <!-- Magnific-popup lightbox -->
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+
+    <!-- Owl Carousel -->
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+
+    <!-- Youtube background -->
+    <link rel="stylesheet" href="{% static 'css/ytplayer.css' %}">
+
+    <!-- Animate css -->
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+
+    <!-- Custom styles CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/new.css' %}" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+</head>
+
+<body>
+    <!-- Preloader -->
+
+    <div id="loading">
+        <canvas class="canvas">
+        </canvas>
+    </div>
+    <!-- Home start -->
+
+    <section id="home" class="module-image js-height-full">
+
+        <div class="intro">
+            <div class="hello">Hello, my name is Pradip Subedi and</div>
+            <h1>I'm Tech Geek / Enthusiast</h1>
+            <div class="who-creates">Football and Travel is love</div>
+        </div>
+
+        <canvas class="background"></canvas>
+
+        <div class="mouse-icon">
+            <div class="wheel"></div>
+        </div>
+
+    </section>
+
+
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+
+
+    <!-- Footer start -->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <ul class="social-links">
+
+                        {% comment %} <li><a href="https://www.facebook.com/username" class="wow fadeInUp"><i
+                                    class="fab fa-facebook-f"></i></a></li> {% endcomment %}
+
+
+                        <li><a href="https://twitter.com/iampradipsubedi" target=blank class="wow fadeInUp"
+                                data-wow-delay=".1s"><i class="fab fa-twitter"></i></a></li>
+
+
+                        {% comment %} <li><a href="https://plus.google.com/+username" class="wow fadeInUp"
+                                data-wow-delay=".2s"><i class="fab fa-google-plus-g"></i></a></li> {% endcomment %}
+
+
+                        <li><a href="https://www.linkedin.com/in/subedipradip" target=blank class="wow fadeInUp"
+                                data-wow-delay=".3s"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCcrsXIlSb7iQvoZp2GRXeug?view_as=subscriber"
+                                target=blank class="wow fadeInUp" data-wow-delay=".3s"><i
+                                    class="fab fa-youtube"></i></a></li>
+
+
+                        <li><a href="http://www.pinterest.com/iampradipsubedi" target=blank class="wow fadeInUp"
+                                data-wow-delay=".4s"><i class="fab fa-pinterest"></i></a></li>
+
+                    </ul>
+
+                    <p class="copyright">
+                        © 2020 Pradip Subedi, All Rights Reserved.
+                    </p>
+
+                </div>
+
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </footer>
+
+    <!-- Footer end -->
+
+    <!-- Scroll-up -->
+
+    <div class="scroll-up">
+        <a id="scroll-up"><i class="fas fa-arrow-up"></i></a>
+    </div>
+
+    <!-- Javascript files -->
+    <!-- <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script> -->
+
+
+    <script src=" {% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <script src=" {% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src=" {% static 'js/jquery.parallax-1.1.3.js' %}"></script>
+    <script src=" {% static 'js/imagesloaded.pkgd.js' %}"></script>
+    <script src=" {% static 'js/jquery.shuffle.min.js' %}"></script>
+    <script src=" {% static 'js/owl.carousel.min.js' %}"></script>
+    <script src=" {% static 'js/jquery.fitvids.js' %}"></script>
+    <script src=" {% static 'js/jquery.sticky.js' %}"></script>
+    <script src=" {% static 'js/smoothscroll.js' %}"></script>
+    <script src=" {% static 'js/wow.min.js' %}"></script>
+
+    <!-- Youtube background -->
+    <script src=" {% static 'js/jquery.mb.YTPlayer.js' %} "></script>
+
+    <!--PARTICLES ANIMATE JS-->
+    <script src=" {% static 'js/particles.min.js' %} "></script>
+    <script src=" {% static 'js/particles.app.js' %} "></script>
+
+    <!-- Google Map js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJScy7qJ156DWM8kJVG-ZrK0R7Kize2Jg"></script>
+    <script src=" {% static 'js/map.js' %} "></script>
+    <!-- Custom scripts -->
+    <script src=" {% static 'js/custom.js' %}"></script>
+    <script src=" {% static 'js/prel.js' %}"></script>
+    <script src=" {% static 'js/custom-shuffle-init.js' %} "></script>
+
+</body>
+
+</html>
